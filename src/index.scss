@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css?family=Bree+Serif|Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans');
+
+@import "../node_modules/semantic-ui-css/components/flag.min.css";
+
+$font-family-serif:      'Bree Serif', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$font-family-sans-serif: 'Fira Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+$container-max-widths: (
+  sm: 540px,
+  md: 600px,
+  lg: 700px,
+  xl: 800px
+);
+
+$amzn-blue: #232F3E;
+$amzn-orange: #F8991D;
+$amzn-white: #F9F9F9;
+$amzn-green: #4F772D;
+$amzn-red: #A20021;
+$amzn-grey: #6E767F;
+
+$body-color: $amzn-blue; //override default bootstrap body color
+
+
+@import "node_modules/bootstrap/scss/bootstrap";	
+
+#app-wrapper {
+	display: flex;
+	min-height: 100vh;
+  flex-direction: column;
+  font-family: $font-family-sans-serif;
+  background-color: $amzn-white;
+}
+
+#homepage-container {
+  background-color: white;
+}
+
+#content {
+	flex: 1;
+}
+
+/*******************************************************
+ * HERO
+ ******************************************************/
+.jumbotron {
+  background-image: url(assets/img/clouds.jpg);
+  //min-height: 50%;
+  background-repeat: no-repeat;
+  background-position: top;
+  -webkit-background-size: cover;
+  background-size: cover;
+  //height: 25vh;
+  //padding: 1rem 3rem;
+  border-radius: 0;
+}
+
+/*******************************************************
+ * BUTTONS
+ ******************************************************/
+.btn-amzn-blue {
+  background-color: $amzn-blue;
+  border-color: darken($amzn-blue,3);
+  color: white;
+  &:hover {
+    color: white;
+    background-color: darken($amzn-blue,2);
+    border-color: darken($amzn-blue,5);
+  }
+}
+
+/*******************************************************
+ * UTILITY
+ ******************************************************/
+.lead {
+  font-size: 2rem; //override bs 1.25
+}
+
+.sans {
+  font-family: $font-family-serif;
+}
+
+.bg-amzn {
+  background: $amzn-blue;
+}
+
+.text-amzn-orange {
+  color: $amzn-orange;
+}
+
+a.text-amzn-orange:hover {
+  color: darken($amzn-orange,10);
+}
+
+.flash-container {
+	margin-top: 1rem;
+}
+
+.fancy-text {
+  font-weight: 800;
+  color: $amzn-red;
+}
+
+/*******************************************************
+ * FOOTER
+ ******************************************************/
+
+$footer-dark-color:                 rgba($white, .5) !default;
+$footer-dark-hover-color:           rgba($white, .75) !default;
+$footer-dark-active-color:          $white !default;
+$footer-dark-disabled-color:        rgba($white, .25) !default;
+
+$footer-dark-background: $amzn-blue;
+$footer-inner-background: darken($footer-dark-background,10);
+
+.footer {
+  padding-top: $spacer;
+  background: $footer-dark-background;
+  color: $footer-dark-color;
+  a {
+    color: $amzn-orange;
+    &:hover {
+      color: darken($amzn-orange,10);
+    }
+    //&:visited {
+    //  color: darken($amzn-orange,20);
+    //}
+  }
+  .footer-bottom{
+  	padding: 5px;
+    background: $footer-inner-background;
+    p {
+      text-align: center;
+      margin: 10px 0;
+    }
+  }
+}
+
+/*******************************************************
+ * TOAST NOTIFICATIONS
+ ******************************************************/
+.success-toast{
+  background: #57CE3A !important;
+  color: $amzn-blue !important;
+  padding: 1rem !important;
+  .Toastify__progress-bar{
+    background: $amzn-blue !important
+  }
+}
